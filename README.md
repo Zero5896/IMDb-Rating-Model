@@ -1,5 +1,7 @@
 # IMDB Movie Review Sentiment Analysis
 
+<img src="https://th-thumbnailer.cdn-si-edu.com/vCjrNaMJS4XDwEktzN75MD1wdqs=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/bc/32/bc328d3e-22e2-41e4-b3d5-a230015d7f00/42-36911842.jpg" alt="Cool Porsche 930 Turbo" width="250" height="200"/>
+
 ## Project Overview
 This project focuses on sentiment classification using the IMDB dataset, which includes 50,000 highly polar movie reviews. The goal is to build a model that can accurately classify movie reviews as positive or negative, leveraging both traditional and deep learning approaches.
 
