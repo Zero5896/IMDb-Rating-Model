@@ -25,6 +25,21 @@ More information about the dataset is available [here](https://www.kaggle.com/da
 
 ## 🔍 Methodology
 1. **Data Preprocessing**: Steps to clean and prepare text data for modeling.
+```python
+# Join all reviews into a single string
+all_text = ' '.join(df['cleaned_reviews'])
+
+# Generate a word cloud
+wordcloud = WordCloud(width=800, height=400, background_color='black', colormap='Blues', max_words=100).generate(all_text)
+
+# Plot the word cloud
+plt.figure(figsize=(10, 6))
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+```
+![Word Cloud](results/MovieWordCloud.png)
+
 2. **Exploratory Data Analysis (EDA)**: Insights into the distribution and structure of the dataset.
 3. **Modeling**:
    - Logistic Regression
