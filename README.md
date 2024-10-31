@@ -52,23 +52,11 @@ if you have additional questions about this metrics check [📺 Introduction to 
 3. **Modeling**:
    - Logistic Regression
 ```python
-# Import the TF-IDF Vectorizer from sklearn's feature extraction module
-vectorizer = TfidfVectorizer(max_features=5000, stop_words='english')  
-
-# Transform the training text data into TF-IDF features
-# 'max_features=5000' limits the vocabulary to the 5,000 most important words
-# 'stop_words="english"' removes common English words (like "the", "is") to focus on meaningful words
-X_train_tfidf = vectorizer.fit_transform(X_train)
-
-# Transform the test text data using the same fitted vectorizer
-# This ensures that the same vocabulary and weight calculations are applied to the test data
-X_test_tfidf = vectorizer.transform(X_test)
+model = LogisticRegression()
 ```
 Metrics
 ```
 Accuracy: 0.8884
-
-
 
               precision    recall  f1-score   support
 
@@ -78,11 +66,49 @@ Accuracy: 0.8884
     accuracy                           0.89     10000
    macro avg       0.89      0.89      0.89     10000
 weighted avg       0.89      0.89      0.89     10000
-
-
 ```
-(This project uses logistic regression for binary sentiment classification. Logistic regression is a common algorithm for binary classification tasks, working by estimating probabilities to classify data into categories. If you’re interested in learning more about how logistic regression works, this video provides an excellent overview: [📺 Watch: Introduction to Logistic Regression](https://www.youtube.com/watch?v=EKm0spFxFG4)
-)
+   - Our logistic Regression looks quite good from the start, it is clear that while it missed a few ones, mostly is a good model with minor mistakes
+
+      - (This project uses logistic regression for binary sentiment classification. Logistic regression is a common algorithm for binary classification tasks, working by estimating probabilities to classify data into categories. If you’re interested in learning more about how logistic regression works, this video provides an excellent overview: [📺 Watch: Introduction to Logistic Regression](https://www.youtube.com/watch?v=EKm0spFxFG4))
+
+
+   - Decision Trees
+   ```python
+   model = DecisionTreeClassifier(random_state=1)
+   ```
+Metrics
+```
+Accuracy: 0.7206
+
+              precision    recall  f1-score   support
+
+           0       0.72      0.72      0.72      4961
+           1       0.72      0.72      0.72      5039
+
+    accuracy                           0.72     10000
+   macro avg       0.72      0.72      0.72     10000
+weighted avg       0.72      0.72      0.72     10000
+```
+   - Looks like Decision Trees performed worse that Logistic Regression, in this case, the model doesn´t look outstanding, but get the job done.
+
+   - Random Forest
+   ```python
+   model = DecisionTreeClassifier(random_state=1)
+   ```
+Metrics
+```
+Accuracy: 0.8481
+              precision    recall  f1-score   support
+
+           0       0.84      0.86      0.85      4961
+           1       0.86      0.83      0.85      5039
+
+    accuracy                           0.85     10000
+   macro avg       0.85      0.85      0.85     10000
+weighted avg       0.85      0.85      0.85     10000
+```
+   - While Decision Trees performance was quite underwhelming, our random forest got a good performance, showing it can handle both seen and unseen data.
+
    - Deep learning models
 ```python
 
