@@ -24,7 +24,23 @@ More information about the dataset is available [here](https://www.kaggle.com/da
 - `README.md`: Project documentation.
 
 ## 🔍 Methodology
-1. **Data Preprocessing**: Steps to clean and prepare text data for modeling.
+1. **Data Preprocessing**: 
+- I noticed the dataframe got HTML code inside on the reviews, so I cleaned it, also converted values like good and bad to 1 and 0
+
+```python
+def clean_text(text):
+    text = re.sub('<br />', ' ', text)  
+    text = re.sub('[^a-zA-Z]', ' ', text)  
+    return text.lower()
+
+
+df['cleaned_reviews'] = df['review'].apply(clean_text)
+
+
+df = df.drop('review', axis=1)
+
+df['sentiment'] = df['sentiment'].map({'positive': 1, 'negative': 0})
+```
 
 
 2. **Exploratory Data Analysis (EDA)**: Insights into the distribution and structure of the dataset.
@@ -110,21 +126,36 @@ weighted avg       0.85      0.85      0.85     10000
    - While Decision Trees performance was quite underwhelming, our random forest got a good performance, showing it can handle both seen and unseen data.
 
    - ### 💻 Deep Learning Models
-```python
 
+
+```python
+# clean code still on development
 ```
+```
+Accuracy: 0.8596
+              precision    recall  f1-score   support
+
+           0       0.84      0.89      0.86      4961
+           1       0.88      0.83      0.86      5039
+
+    accuracy                           0.86     10000
+   macro avg       0.86      0.86      0.86     10000
+weighted avg       0.86      0.86      0.86     10000
+```
+- I really liked the performance of the Neural Networks, but I think I can get more accuracy with more tweaks
 
 ## 📈 Results
-- ****
+- **Decision Trees vs Logistic Regression:**: Although decision trees often excel in classification tasks, logistic regression achieved a higher accuracy in this project. This is likely due to the high dimensionality of the vectorized text data, which logistic regression handles well with its linear nature, whereas decision trees can struggle without additional tuning.
+- **The Data set is actually pretty good for modeling:**: The data proved to be well-suited for modeling, as shown by the satisfactory results across multiple algorithms. Clean and balanced data can significantly impact model performance, reducing preprocessing and enhancing predictive power.
 
 ## 📚 Key Learnings
-- ****
+- **Attention is all you need:**  The TF-IDF vectorization and word cloud visualization highlighted the review structure, effectively capturing key words and phrases. Understanding how to represent text data is crucial for model success, as feature engineering greatly impacts model performance.
+- **Are Neural Networks Powerhouses?:** Neural networks demonstrated their potential as powerful models, but they also need careful tuning to reach optimal performance. Layer configuration, dropout, activation functions, and regularization all play a role in achieving the best results.
 
-## 🚀 Future Improvements
-- ****
 ## 📜 References
 - [Dataset Source](link_to_dataset_source)
-- Additional resources on NLP and sentiment analysis.
+- [Introduction to Logistic Regression](https://www.youtube.com/watch?v=EKm0spFxFG4)
+- [Introduction to Precision, Recall and F1](https://www.youtube.com/watch?v=jJ7ff7Gcq344)
 
 
 ## 🤝 Contributing
