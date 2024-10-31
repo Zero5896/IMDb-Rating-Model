@@ -47,6 +47,8 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
 print(classification_report(y_test, y_pred))
 ```
 
+if you have additional questions about this metrics check [📺 Introduction to Precision, Recall and F1](https://www.youtube.com/watch?v=jJ7ff7Gcq344)!
+
 3. **Modeling**:
    - Logistic Regression
 ```python
