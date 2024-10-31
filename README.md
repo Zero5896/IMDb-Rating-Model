@@ -50,7 +50,7 @@ print(classification_report(y_test, y_pred))
 if you have additional questions about this metrics check [📺 Introduction to Precision, Recall and F1](https://www.youtube.com/watch?v=jJ7ff7Gcq344)!
 
 3. **Modeling**:
-   - Logistic Regression
+- ### Logistic Regression
 ```python
 model = LogisticRegression()
 ```
@@ -72,7 +72,7 @@ weighted avg       0.89      0.89      0.89     10000
       - (This project uses logistic regression for binary sentiment classification. Logistic regression is a common algorithm for binary classification tasks, working by estimating probabilities to classify data into categories. If you’re interested in learning more about how logistic regression works, this video provides an excellent overview: [📺 Watch: Introduction to Logistic Regression](https://www.youtube.com/watch?v=EKm0spFxFG4))
 
 
-   - Decision Trees
+   - ### Decision Trees
    ```python
    model = DecisionTreeClassifier(random_state=1)
    ```
@@ -91,7 +91,7 @@ weighted avg       0.72      0.72      0.72     10000
 ```
    - Looks like Decision Trees performed worse that Logistic Regression, in this case, the model doesn´t look outstanding, but get the job done.
 
-   - Random Forest
+   - ### Random Forest
    ```python
    model = DecisionTreeClassifier(random_state=1)
    ```
@@ -109,7 +109,7 @@ weighted avg       0.85      0.85      0.85     10000
 ```
    - While Decision Trees performance was quite underwhelming, our random forest got a good performance, showing it can handle both seen and unseen data.
 
-   - Deep learning models
+   - ### Deep learning models
 ```python
 
 ```
