@@ -27,20 +27,6 @@ More information about the dataset is available [here](https://www.kaggle.com/da
 1. **Data Preprocessing**: 
 - I noticed the dataframe got HTML code inside on the reviews, so I cleaned it, also converted values like good and bad to 1 and 0
 
-```python
-def clean_text(text):
-    text = re.sub('<br />', ' ', text)  
-    text = re.sub('[^a-zA-Z]', ' ', text)  
-    return text.lower()
-
-
-df['cleaned_reviews'] = df['review'].apply(clean_text)
-
-
-df = df.drop('review', axis=1)
-
-df['sentiment'] = df['sentiment'].map({'positive': 1, 'negative': 0})
-```
 
 
 2. **Exploratory Data Analysis (EDA)**: Insights into the distribution and structure of the dataset.
