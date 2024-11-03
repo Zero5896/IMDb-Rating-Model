@@ -59,7 +59,8 @@ Accuracy: 0.8884
       - (This project uses logistic regression for binary sentiment classification. Logistic regression is a common algorithm for binary classification tasks, working by estimating probabilities to classify data into categories. If you’re interested in learning more about how logistic regression works, this video provides an excellent overview: [📺 Watch: Introduction to Logistic Regression](https://www.youtube.com/watch?v=EKm0spFxFG4))
 
 
-   - ### 🌳 Decision Trees
+   - ### 🌳  [Decision Trees](Movie_Review_DT_RF.ipynb#decision-trees)
+
 
 Metrics
 ```
@@ -67,7 +68,7 @@ Accuracy: 0.7206
 ```
    - Looks like Decision Trees performed worse that Logistic Regression, in this case, the model doesn´t look outstanding, but get the job done.
 
-   - ### 🌲 Random Forest
+   - ### 🌲 [Random Forests](Movie_Review_DT_RF.ipynb#random-forests)
 
 Metrics
 ```
@@ -75,7 +76,7 @@ Accuracy: 0.8481
 ```
    - While Decision Trees performance was quite underwhelming, our random forest got a good performance, showing it can handle both seen and unseen data.
 
-   - ### 💻 Deep Learning Models
+   - ### 💻 [Deep Learning Models](Movie_Review_Neural_Networks.ipynb#neural-networks)
 
 
 ```
