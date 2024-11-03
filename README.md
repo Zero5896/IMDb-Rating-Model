@@ -17,11 +17,6 @@ More information about the dataset is available [here](https://www.kaggle.com/da
 ## 🎯 Objectives
 - **Binary Sentiment Classification**: Predict whether a review is positive or negative.
 
-## 📂 Project Structure
-- `data/`: Contains the IMDB dataset.
-- `Movie_Review_Logistic_Regression.ipynb`: Model with Logistic Regression
-- `Movie_Review_Neural_Networks.ipynb` :Model with Neural Netowrks
-- `README.md`: Project documentation.
 
 ## 🔍 Methodology
 1. **Data Preprocessing**: 
@@ -40,6 +35,7 @@ plt.axis('off')
 plt.show()
 
 ```
+(Note: this wordcloud shows the words that sepeat the most)
 ![Word Cloud](results/MovieWordCloud.png)
 
 (Note: This is the error handling im going to use through all the models)
@@ -52,22 +48,11 @@ print(classification_report(y_test, y_pred))
 if you have additional questions about this metrics check [📺 Introduction to Precision, Recall and F1](https://www.youtube.com/watch?v=jJ7ff7Gcq344)!
 
 3. **Modeling**:
-- ### 📊 Logistic Regression
-```python
-model = LogisticRegression()
-```
-Metrics
+- ### 📊 [Logistic Regression](Movie_Review_Logistic_Regression.ipynb#logistic-regression)
+
+
 ```
 Accuracy: 0.8884
-
-              precision    recall  f1-score   support
-
-          -1       0.90      0.87      0.89      4961
-           1       0.88      0.91      0.89      5039
-
-    accuracy                           0.89     10000
-   macro avg       0.89      0.89      0.89     10000
-weighted avg       0.89      0.89      0.89     10000
 ```
    - Our logistic Regression looks quite good from the start, it is clear that while it missed a few ones, mostly is a good model with minor mistakes
 
@@ -75,48 +60,24 @@ weighted avg       0.89      0.89      0.89     10000
 
 
    - ### 🌳 Decision Trees
-   ```python
-   model = DecisionTreeClassifier(random_state=1)
-   ```
+
 Metrics
 ```
 Accuracy: 0.7206
-
-              precision    recall  f1-score   support
-
-           0       0.72      0.72      0.72      4961
-           1       0.72      0.72      0.72      5039
-
-    accuracy                           0.72     10000
-   macro avg       0.72      0.72      0.72     10000
-weighted avg       0.72      0.72      0.72     10000
 ```
    - Looks like Decision Trees performed worse that Logistic Regression, in this case, the model doesn´t look outstanding, but get the job done.
 
    - ### 🌲 Random Forest
-   ```python
-   model = DecisionTreeClassifier(random_state=1)
-   ```
+
 Metrics
 ```
 Accuracy: 0.8481
-              precision    recall  f1-score   support
-
-           0       0.84      0.86      0.85      4961
-           1       0.86      0.83      0.85      5039
-
-    accuracy                           0.85     10000
-   macro avg       0.85      0.85      0.85     10000
-weighted avg       0.85      0.85      0.85     10000
 ```
    - While Decision Trees performance was quite underwhelming, our random forest got a good performance, showing it can handle both seen and unseen data.
 
    - ### 💻 Deep Learning Models
 
 
-```python
-# clean code still on development
-```
 ```
 Accuracy: 0.8596
               precision    recall  f1-score   support
